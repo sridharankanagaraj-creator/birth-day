@@ -1,0 +1,104 @@
+/* GLOBAL FONT */
+body {
+  font-family: 'Great Vibes', cursive;
+  background: #fff0f5;
+  text-align: center;
+}
+
+/* NAME STYLE */
+.name {
+  font-size: 48px;
+  color: #8b0000;
+  text-shadow: 0 0 10px rgb(3, 133, 44);
+}
+
+/* BUTTONS */
+button {
+  border-radius: 20px;
+}
+body{
+  text-align:center;
+  background:#fff0f5;
+  font-family: Arial, sans-serif;
+}
+
+.emoji{
+  font-size:90px;
+  cursor:pointer;
+}
+
+.name{
+  color:#8b0000;
+  font-size:36px;
+}
+
+.album{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.album img{
+  width:220px;
+  border-radius:15px;
+  box-shadow:0 0 10px pink;
+}
+
+.btn{
+  display:inline-block;
+  margin:30px;
+  padding:12px 25px;
+  background:hotpink;
+  color:white;
+  text-decoration:none;
+  border-radius:25px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: hotpink;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 18px;
+}
+
+#password-screen {
+  position: fixed;
+  inset: 0;
+  background: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-indexianimation: fadeIn 1s;
+}
+
+#password-screen input {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  margin: 10px;
+  text-align: center;
+}
+
+#password-screen button {
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  background: hotpink;
+  color: white;
+}
+
+#main-content {
+  display: none;
+}
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall linear infinite;
+}

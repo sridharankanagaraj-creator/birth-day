@@ -1,0 +1,165 @@
+
+</div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday My Dear Love 💖</title>
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #fff0f5;
+      text-align: center;
+      font-family: 'Segoe Script', cursive;
+      overflow-x: hidden;
+    }
+
+    .screen {
+      display: none;
+      padding: 90px 20px;
+      min-height: 100vh;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .candle, .cake {
+      font-size: 90px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+
+    .hint {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #8b0000;
+    }
+
+    .name {
+      font-size: 42px;
+      margin: 15px 0;
+      color: #8b0000;
+      text-shadow: 0 0 10px pink, 0 0 25px hotpink;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: hotpink;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 18px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* HEART RAIN */
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 20px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 🎶 MUSIC (starts after candle) -->
+<audio id="" loop>
+  <source src="music/love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🕯️ SCREEN 1 : CANDLE -->
+<div id="candleScreen" class="screen active">
+  <div class="candle" onclick="blowCandle()">🕯️</div>
+  <p class="hint">Touch the candle 💫</p>
+</div>
+
+<!-- 🎂 SCREEN 2 : CAKE -->
+<div id="cakeScreen" class="screen">
+  <div class="cake" onclick="cutCake()">🎂</div>
+  <p class="hint">Touch the cake 🎉</p>
+</div>
+
+<!-- 💖 SCREEN 3 : WISHES -->
+<div id="wishScreen" class="screen">
+  <h1>Happy Birthday My Dear </h1>
+
+  <h2 class="name">
+    💖 <Great Vibes id="typing-name"><Great Vibes/> 💖
+  </h2>
+
+  <p>
+    Un smile dhaan en life-oda best gift ❤️  
+    Intha birthday mattum illa…  
+    nee irukura ovvoru naalum enakku celebration dhaan 🎂
+  </p>
+
+  <a href="album.html" class="btn">Next ➝</a>
+</div>
+
+<script>
+  /* 🔤 NAME TYPING */
+  const nameText = "ABARNA"; // CHANGE THIS
+  let i = 0;
+
+  function typeName() {
+    if (i < nameText.length) {
+      document.getElementById("typing-name").innerHTML += nameText.charAt(i);
+      i++;
+      setTimeout(typeName, 150);
+    }
+  }
+
+  /* 🕯️ → 🎂 */
+  function blowCandle() {
+    document.getElementById("candleScreen").classList.remove("active");
+    document.getElementById("cakeScreen").classList.add("active");
+
+    document.getElementById("bgMusic").play(); // music start
+  }
+
+  /* 🎂 → 💖 */
+  function cutCake() {
+    document.getElementById("cakeScreen").classList.remove("active");
+    document.getElementById("wishScreen").classList.add("active");
+    typeName();
+  }
+
+  /* ❤️ HEART RAIN */
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+  }, 300);
+</script>
+
+</body>
+</html>
+</dev>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forever 💍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="final">
+  <h1>Forever Yours 💖</h1>
+  <p class="hubby">
+     your hubby  💍❤️
+  </p>
+</section>
+* ❤️ HEART RAIN */
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+  }, 300);
+
+</body>
+</html>
